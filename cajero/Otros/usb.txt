@@ -1,0 +1,27 @@
+Bus 001 Device 006: ID 18ec:3399 Arkmicro Technologies Inc. 
+Bus 001 Device 013: ID 14cd:125d Super Top 
+Bus 001 Device 005: ID 046d:c31d Logitech, Inc. Media Keyboard K200
+Bus 001 Device 012: ID 10c4:8105 Cygnal Integrated Products, Inc. 
+Bus 001 Device 003: ID 0424:ec00 Standard Microsystems Corp. SMSC9512/9514 Fast Ethernet Adapter
+Bus 001 Device 002: ID 0424:9514 Standard Microsystems Corp. 
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+
+
+
+Bus 001 Device 006: ID 18ec:3399 Arkmicro Technologies Inc. 
+Bus 001 Device 008: ID 0519:0001 Star Micronics Co., Ltd 
+Bus 001 Device 005: ID 046d:c31d Logitech, Inc. Media Keyboard K200
+Bus 001 Device 010: ID 14cd:125d Super Top 
+Bus 001 Device 003: ID 0424:ec00 Standard Microsystems Corp. SMSC9512/9514 Fast Ethernet Adapter
+Bus 001 Device 002: ID 0424:9514 Standard Microsystems Corp. 
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+
+Bus 001 Device 006: ID 18ec:3399 Arkmicro Technologies Inc. 
+Bus 001 Device 008: ID 0519:0001 Star Micronics Co., Ltd 
+Bus 001 Device 005: ID 046d:c31d Logitech, Inc. Media Keyboard K200
+Bus 001 Device 007: ID 10c4:8105 Cygnal Integrated Products, Inc. 
+Bus 001 Device 003: ID 0424:ec00 Standard Microsystems Corp. SMSC9512/9514 Fast Ethernet Adapter
+Bus 001 Device 002: ID 0424:9514 Standard Microsystems Corp. 
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+
+

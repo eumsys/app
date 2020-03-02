@@ -1,0 +1,19 @@
+idTarifa,plaza,fec_ini,fec_fin,hor_ini,hor_fin,dia_sem,des_tar,costo,int_1,int_2,estado,prioridad,descuento
+48,1,,,,,,tarifa de 0 a 1 horas,10,0,1,1,1,1
+49,1,,,,,,tarifa de 1 a 2 horas,20,1,2,1,1,1
+50,1,,,,,,tarifa de 2 a 3 horas,30,2,3,1,1,1
+51,1,,,,,,tarifa de 3 a 4 horas,40,3,4,1,1,1
+52,1,,,,,,tarifa de 4 a 5 horas,50,4,5,1,1,1
+53,1,,,,,,tarifa de 5 a 6 horas,60,5,6,1,1,1
+54,1,,,,,,tarifa de 6 a 7 horas,70,6,7,1,1,1
+55,1,,,,,,tarifa de 7 a 8 horas,80,7,8,1,1,1
+56,1,,,,,,tarifa de 8 a 9 horas,90,8,9,1,1,1
+57,1,,,,,,tarifa de 9 a 10 horas,100,9,10,1,1,1
+58,1,,,,,,tarifa de 10 a 11 horas,110,10,11,1,1,1
+59,1,,,,,,tarifa maxima,120,11,23,1,1,1
+60,1,,,,,,descuento wallmart,5,0,2,1,1,2
+61,1,,,,,,descuento cinemex,8,0,1,1,1,3
+62,1,,,,,,descuento cinemex,16,1,2,1,1,3
+63,1,,,,,,descuento cinemex,24,2,3,1,1,3
+64,1,,,,,,descuento vips,5,0,2,1,1,4
+65,1,,,,,,descuento suburbia,5,0,2,1,1,5

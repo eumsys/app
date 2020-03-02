@@ -1,0 +1,25 @@
+CREATE TABLE plaza
+(
+  idplaza integer NOT NULL,
+  estado character varying,
+  pais character varying,
+  continente character varying,
+  nombre_plaza character varying,
+  calle character varying,
+  colonia character varying,
+  delegacion character varying,
+  cp integer,
+  numinterior character varying,
+  numexterior character varying,
+  telefonolocal character varying,
+  extension character varying,
+  email character varying,
+  celular character varying,
+  logo character varying,
+  CONSTRAINT plaza_pk PRIMARY KEY (idplaza)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE plaza
+  OWNER TO postgres;

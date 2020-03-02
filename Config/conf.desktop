@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=Config
+Comment=Configuracion del equipo
+Exec=python3 /home/pi/Documents/eum/app/Config/main.py
+Icon=/home/cajero/Documentos/eum/app/iconos/iconosCajero/Dinero.png
+Terminal=true
+StartupNotify=false

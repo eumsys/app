@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=Config
+Comment=Configuracion del equipo
+Icon=/home/cajero/Imágenes/iconosCajero/Configuracion_B.png
+Exec=python3 /home/cajero/Documentos/eum/app/Config/main.py
+Terminal=true

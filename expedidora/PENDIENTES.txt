@@ -1,0 +1,1 @@
+QUERY para agregar tarifa desde el servidor

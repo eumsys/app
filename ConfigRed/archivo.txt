@@ -1,0 +1,7 @@
+Cajero_1,200.10.10.3,UPDATE "CAJERO" SET "idCajero" = 1 WHERE id_cajero = 1;
+Cajero_2,200.10.10.5,UPDATE "CAJERO" SET "idCajero" = 2 WHERE id_cajero = 1;
+Cajero_3,200.10.10.7,UPDATE "CAJERO" SET "idCajero" = 3 WHERE id_cajero = 1;
+Cajero_4,200.10.10.9,UPDATE "CAJERO" SET "idCajero" = 4 WHERE id_cajero = 1;
+Cajero_5,200.10.10.11,UPDATE "CAJERO" SET "idCajero" = 5 WHERE id_cajero = 1;
+Cajero_6,200.10.10.13,UPDATE "CAJERO" SET "idCajero" = 6 WHERE id_cajero = 1;
+Cajero_7,200.10.10.15,UPDATE "CAJERO" SET "idCajero" = 7 WHERE id_cajero = 1;

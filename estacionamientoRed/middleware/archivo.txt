@@ -1,0 +1,15 @@
+expedidora_1,200.10.10.10,UPDATE datos_expedidora SET num_expedidora = 1 WHERE id_expedidora = 1;
+expedidora_2,200.10.10.11,UPDATE datos_expedidora SET num_expedidora = 2 WHERE id_expedidora = 1;
+expedidora_3,200.10.10.12,UPDATE datos_expedidora SET num_expedidora = 3 WHERE id_expedidora = 1;
+expedidora_4,200.10.10.13,UPDATE datos_expedidora SET num_expedidora = 4 WHERE id_expedidora = 1;
+validadora_1,200.10.10.14,UPDATE datos_salida SET num_salida = 1 WHERE id_salida = 1;
+validadora_2,200.10.10.15,UPDATE datos_salida SET num_salida = 2 WHERE id_salida = 1;
+validadora_3,200.10.10.16,UPDATE datos_salida SET num_salida = 3 WHERE id_salida = 1;
+validadora_4,200.10.10.17,UPDATE datos_salida SET num_salida = 4 WHERE id_salida = 1;
+Cajero_1,200.10.10.3,UPDATE datos_cajero SET num_cajero = 1 WHERE id_cajero = 1;
+Cajero_2,200.10.10.4,UPDATE datos_cajero SET num_cajero = 2 WHERE id_cajero = 1;
+Cajero_3,200.10.10.5,UPDATE datos_cajero SET num_cajero = 3 WHERE id_cajero = 1;
+Cajero_4,200.10.10.6,UPDATE datos_cajero SET num_cajero = 4 WHERE id_cajero = 1;
+Cajero_5,200.10.10.7,UPDATE datos_cajero SET num_cajero = 5 WHERE id_cajero = 1;
+Cajero_6,200.10.10.8,UPDATE datos_cajero SET num_cajero = 6 WHERE id_cajero = 1;
+Cajero_7,200.10.10.9,UPDATE datos_cajero SET num_cajero = 7 WHERE id_cajero = 1;

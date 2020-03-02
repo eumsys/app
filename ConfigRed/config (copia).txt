@@ -1,0 +1,9 @@
+Cajero 1,200.10.10.1,UPDATE datos_expedidora SET num_expedidora id_expedidora = 1;
+Cajero 2,200.10.10.2,UPDATE datos_expedidora SET num_expedidora id_expedidora = 2;
+Cajero 3,200.10.10.3,UPDATE datos_expedidora SET num_expedidora id_expedidora = 3; 
+Expedidora 1,200.10.10.4,UPDATE datos_expedidora SET num_expedidora id_expedidora = 1;
+Expedidora 2,200.10.10.5,UPDATE datos_expedidora SET num_expedidora id_expedidora = 1;
+Expedidora 3,200.10.10.6,UPDATE datos_expedidora SET num_expedidora id_expedidora = 1;  
+Validadora 1,200.10.10.7,UPDATE datos_expedidora SET num_expedidora id_expedidora = 1;
+Validadora 2,200.10.10.8,UPDATE datos_expedidora SET num_expedidora id_expedidora = 1;
+Validadora 3,200.10.10.9,UPDATE datos_expedidora SET num_expedidora id_expedidora = 1;

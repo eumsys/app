@@ -1,0 +1,12 @@
+[2020-02-29]
+12:44:47.657144 iniciando cobro...
+12:46:10.809080 Tubos antes del cambio: [20, 5, 3, 1] 
+12:46:14.964256 Tubos despues del cambio: [19, 5, 3, 1] 
+12:46:15.082209 Datos Operacion: 60,1,2019-06-21 10:30:12 
+12:46:15.134641 Monto cobrado: 55 
+12:46:15.186186 Monedas recibidas: 1:1 
+12:46:15.212290 Billetes recibidos: 0:0 
+12:46:15.264298 Cambio solicitado: 1 
+12:46:15.305558 Cambio entregado (Monedas): 1:1 
+12:46:15.336410 Cambio entregado (Billetes): 0:0 
+12:46:15.449263 Registro interno exitoso60,1,'2020-02-29 12:46:15 5 

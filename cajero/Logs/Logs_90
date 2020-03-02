@@ -1,0 +1,19 @@
+[2020-03-02]
+14:23:23.531608 iniciando cobro...
+14:23:24.781241 Datos Operacion: 1104,1,2020-02-01 04:47:01 
+14:23:24.812618 Monto cobrado: 8 
+14:23:24.854563 Monedas recibidas: 0:0 
+14:23:24.880534 Billetes recibidos: 0:0 
+14:23:24.911446 Cambio solicitado: 0 
+14:23:24.937068 Cambio entregado (Monedas): 0:0 
+14:23:24.962638 Cambio entregado (Billetes): 0:0 
+14:23:25.046685 Registro interno exitoso1104,1,'2020-03-02 14:23:24 5 
+14:25:05.003799 iniciando cobro...
+14:25:06.249914 Datos Operacion: 1104,1,2020-02-01 04:47:01 
+14:25:06.266878 Monto cobrado: 8 
+14:25:06.288817 Monedas recibidas: 0:0 
+14:25:06.340328 Billetes recibidos: 0:0 
+14:25:06.407167 Cambio solicitado: 0 
+14:25:06.427640 Cambio entregado (Monedas): 0:0 
+14:25:06.479075 Cambio entregado (Billetes): 0:0 
+14:25:06.546098 Registro interno exitoso1104,1,'2020-03-02 14:25:06 5 

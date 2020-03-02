@@ -1,0 +1,319 @@
+#include <font.defs>
+#include <media.defs>
+
+//#po da ""
+//#po de ""
+//#po es ""
+//#po et ""
+//#po fi ""
+//#po fr ""
+//#po he ""
+//#po id ""
+//#po it ""
+//#po ja ""
+//#po ko ""
+//#po nl ""
+//#po no ""
+//#po pl ""
+//#po pt ""
+//#po pt_BR ""
+//#po ru ""
+//#po sv ""
+//#po zh ""
+//#po zh_TW ""
+
+#media "w432h240/58mm x 30mm" 54mm 30mm
+#media "w432h320/58mm x 40mm" 54mm 40mm
+#media "w432h400/58mm x 50mm" 54mm 50mm
+#media "w432h480/58mm x 60mm" 54mm 60mm
+#media "w432h560/58mm x 70mm" 54mm 70mm
+#media "w432h640/58mm x 80mm" 54mm 80mm
+#media "w432h720/58mm x 90mm" 54mm 90mm
+#media "w432h800/58mm x 100mm" 54mm 100mm
+#media "w432h880/58mm x 110mm" 54mm 110mm
+#media "w432h960/58mm x 120mm" 54mm 120mm
+#media "w432h1040/58mm x 130mm" 54mm 130mm
+#media "w432h1120/58mm x 140mm" 54mm 140mm
+#media "w432h1200/58mm x 150mm" 54mm 150mm
+#media "w432h1280/58mm x 160mm" 54mm 160mm
+#media "w432h1360/58mm x 170mm" 54mm 170mm
+#media "w432h1440/58mm x 180mm" 54mm 180mm
+#media "w432h1520/58mm x 190mm" 54mm 190mm
+#media "w432h1600/58mm x 200mm" 54mm 200mm
+#media "w432h1680/58mm x 210mm" 54mm 210mm
+#media "w432h1760/58mm x 220mm" 54mm 220mm
+#media "w432h1840/58mm x 230mm" 54mm 230mm
+#media "w432h1920/58mm x 240mm" 54mm 240mm
+#media "w432h2000/58mm x 250mm" 54mm 250mm
+
+
+#media "w488h240/60mm x 30mm" 56mm 30mm
+#media "w488h320/60mm x 40mm" 56mm 40mm
+#media "w488h400/60mm x 50mm" 56mm 50mm
+#media "w488h480/60mm x 60mm" 56mm 60mm
+#media "w488h560/60mm x 70mm" 56mm 70mm
+#media "w488h640/60mm x 80mm" 56mm 80mm
+#media "w488h720/60mm x 90mm" 56mm 90mm
+#media "w488h800/60mm x 100mm" 56mm 100mm
+#media "w488h880/60mm x 110mm" 56mm 110mm
+#media "w488h960/60mm x 120mm" 56mm 120mm
+#media "w488h1040/60mm x 130mm" 56mm 130mm
+#media "w488h1120/60mm x 140mm" 56mm 140mm
+#media "w488h1200/60mm x 150mm" 56mm 150mm
+#media "w488h1280/60mm x 160mm" 56mm 160mm
+#media "w488h1360/60mm x 170mm" 56mm 170mm
+#media "w488h1440/60mm x 180mm" 56mm 180mm
+#media "w488h1520/60mm x 190mm" 56mm 190mm
+#media "w488h1600/60mm x 200mm" 56mm 200mm
+#media "w488h1680/60mm x 210mm" 56mm 210mm
+#media "w488h1760/60mm x 220mm" 56mm 220mm
+#media "w488h1840/60mm x 230mm" 56mm 230mm
+#media "w488h1920/60mm x 240mm" 56mm 240mm
+#media "w488h2000/60mm x 250mm" 56mm 250mm
+
+
+#media "w578h240/80mm x 30mm" 72mm 30mm
+#media "w578h320/80mm x 40mm" 72mm 40mm
+#media "w578h400/80mm x 50mm" 72mm 50mm
+#media "w578h480/80mm x 60mm" 72mm 60mm
+#media "w578h560/80mm x 70mm" 72mm 70mm
+#media "w578h640/80mm x 80mm" 72mm 80mm
+#media "w578h720/80mm x 90mm" 72mm 90mm
+#media "w578h800/80mm x 100mm" 72mm 100mm
+#media "w578h880/80mm x 110mm" 72mm 110mm
+#media "w578h960/80mm x 120mm" 72mm 120mm
+#media "w578h1040/80mm x 130mm" 72mm 130mm
+#media "w578h1120/80mm x 140mm" 72mm 140mm
+#media "w578h1200/80mm x 150mm" 72mm 150mm
+#media "w578h1280/80mm x 160mm" 72mm 160mm
+#media "w578h1360/80mm x 170mm" 72mm 170mm
+#media "w578h1440/80mm x 180mm" 72mm 180mm
+#media "w578h1520/80mm x 190mm" 72mm 190mm
+#media "w578h1600/80mm x 200mm" 72mm 200mm
+#media "w578h1680/80mm x 210mm" 72mm 210mm
+#media "w578h1760/80mm x 220mm" 72mm 220mm
+#media "w578h1840/80mm x 230mm" 72mm 230mm
+#media "w578h1920/80mm x 240mm" 72mm 240mm
+#media "w578h2000/80mm x 250mm" 72mm 250mm
+
+
+#media "w640h240/83mm x 30mm" 80mm 30mm
+#media "w640h320/83mm x 40mm" 80mm 40mm
+#media "w640h400/83mm x 50mm" 80mm 50mm
+#media "w640h480/83mm x 60mm" 80mm 60mm
+#media "w640h560/83mm x 70mm" 80mm 70mm
+#media "w640h640/83mm x 80mm" 80mm 80mm
+#media "w640h720/83mm x 90mm" 80mm 90mm
+#media "w640h800/83mm x 100mm" 80mm 100mm
+#media "w640h880/83mm x 110mm" 80mm 110mm
+#media "w640h960/83mm x 120mm" 80mm 120mm
+#media "w640h1040/83mm x 130mm" 80mm 130mm
+#media "w640h1120/83mm x 140mm" 80mm 140mm
+#media "w640h1200/83mm x 150mm" 80mm 150mm
+#media "w640h1280/83mm x 160mm" 80mm 160mm
+#media "w640h1360/83mm x 170mm" 80mm 170mm
+#media "w640h1440/83mm x 180mm" 80mm 180mm
+#media "w640h1520/83mm x 190mm" 80mm 190mm
+#media "w640h1600/83mm x 200mm" 80mm 200mm
+#media "w640h1680/83mm x 210mm" 80mm 210mm
+#media "w640h1760/83mm x 220mm" 80mm 220mm
+#media "w640h1840/83mm x 230mm" 80mm 230mm
+#media "w640h1920/83mm x 240mm" 80mm 240mm
+#media "w640h2000/83mm x 250mm" 80mm 250mm
+
+
+// Common stuff for all drivers...
+Attribute "cupsVersion" "" "1.4"
+
+Copyright "Copyright 2009 by Sanei Electric Inc."
+
+Font *
+
+Version "1.4"
+
+
+// Sanei
+{
+  Manufacturer "Sanei"
+  DriverType custom
+  Filter application/vnd.cups-raster 50 /usr/lib/cups/filter/rastertosanei
+  Throughput 8
+  ColorDevice False
+
+  // Sanei SK1-31 Printer
+  {
+    ModelName "Sanei SK1-31 Printer"
+    Attribute NickName "" "Sanei SK1-31 Printer"
+    PCFileName "sanei_sk1_31.ppd"
+    ModelNumber 1
+
+    HWMargins 0 0 0 0
+    MediaSize w432h240
+    MediaSize w432h320
+    MediaSize w432h400
+    MediaSize w432h480
+    MediaSize w432h560
+    MediaSize w432h640
+    MediaSize w432h720
+    MediaSize w432h800
+    MediaSize w432h880
+    MediaSize w432h960
+    MediaSize w432h1040
+    MediaSize w432h1120
+    MediaSize w432h1200
+    MediaSize w432h1280
+    MediaSize w432h1360
+    MediaSize w432h1440
+    MediaSize w432h1520
+    MediaSize w432h1600
+    MediaSize w432h1680
+    MediaSize w432h1760
+    MediaSize w432h1840
+    MediaSize w432h1920
+    MediaSize w432h2000
+    MediaSize w488h240
+    MediaSize w488h320
+    MediaSize w488h400
+    MediaSize w488h480
+    MediaSize w488h560
+    MediaSize w488h640
+    MediaSize w488h720
+    MediaSize w488h800
+    MediaSize w488h880
+    MediaSize w488h960
+    MediaSize w488h1040
+    MediaSize w488h1120
+    MediaSize w488h1200
+    MediaSize w488h1280
+    MediaSize w488h1360
+    MediaSize w488h1440
+    MediaSize w488h1520
+    MediaSize w488h1600
+    MediaSize w488h1680
+    MediaSize w488h1760
+    MediaSize w488h1840
+    MediaSize w488h1920
+    MediaSize w488h2000
+    MediaSize w578h240
+    MediaSize w578h320
+    MediaSize w578h400
+    *MediaSize w578h480
+    MediaSize w578h560
+    MediaSize w578h640
+    MediaSize w578h720
+    MediaSize w578h800
+    MediaSize w578h880
+    MediaSize w578h960
+    MediaSize w578h1040
+    MediaSize w578h1120
+    MediaSize w578h1200
+    MediaSize w578h1280
+    MediaSize w578h1360
+    MediaSize w578h1440
+    MediaSize w578h1520
+    MediaSize w578h1600
+    MediaSize w578h1680
+    MediaSize w578h1760
+    MediaSize w578h1840
+    MediaSize w578h1920
+    MediaSize w578h2000
+    MediaSize w640h240
+    MediaSize w640h320
+    MediaSize w640h400
+    MediaSize w640h480
+    MediaSize w640h560
+    MediaSize w640h640
+    MediaSize w640h720
+    MediaSize w640h800
+    MediaSize w640h880
+    MediaSize w640h960
+    MediaSize w640h1040
+    MediaSize w640h1120
+    MediaSize w640h1200
+    MediaSize w640h1280
+    MediaSize w640h1360
+    MediaSize w640h1440
+    MediaSize w640h1520
+    MediaSize w640h1600
+    MediaSize w640h1680
+    MediaSize w640h1760
+    MediaSize w640h1840
+    MediaSize w640h1920
+    MediaSize w640h2000
+
+    *Resolution k 1 0 0 0 203x203dpi
+
+    Group "PrinterSettings/Printer Settings"
+      Option "PaperCut/Paper Cut" PickOne AnySetup 20.0
+        *Choice "NoCut/No Cut" ""
+        Choice "PageEndFull/Page End - Full Cut" ""
+        Choice "PageEndPartial/Page End - Partial Cut" ""
+        Choice "DocEndFull/Document End - Full Cut" ""
+        Choice "DocEndPartial/Document End - Partial Cut" ""
+      Option "FeedSizeBeforePrinting/Feed Size Before Printing" PickOne AnySetup 20.0
+        *Choice "BF0/0mm" ""
+        Choice "BF1/1mm" ""
+        Choice "BF2/2mm" ""
+        Choice "BF3/3mm" ""
+        Choice "BF4/4mm" ""
+        Choice "BF5/5mm" ""
+        Choice "BF6/6mm" ""
+        Choice "BF7/7mm" ""
+        Choice "BF8/8mm" ""
+        Choice "BF9/9mm" ""
+        Choice "BF10/10mm" ""
+        Choice "BF11/11mm" ""
+        Choice "BF12/12mm" ""
+        Choice "BF13/13mm" ""
+        Choice "BF14/14mm" ""
+        Choice "BF15/15mm" ""
+        Choice "BF16/16mm" ""
+        Choice "BF17/17mm" ""
+        Choice "BF18/18mm" ""
+        Choice "BF19/19mm" ""
+        Choice "BF20/20mm" ""
+        Choice "BF21/21mm" ""
+        Choice "BF22/22mm" ""
+        Choice "BF23/23mm" ""
+        Choice "BF24/24mm" ""
+        Choice "BF25/25mm" ""
+        Choice "BF26/26mm" ""
+        Choice "BF27/27mm" ""
+        Choice "BF28/28mm" ""
+        Choice "BF29/29mm" ""
+        Choice "BF30/30mm" ""
+      Option "FeedSizeAfterPrinting/Feed Size After Printing" PickOne AnySetup 20.0
+        *Choice "AF0/0mm" ""
+        Choice "AF1/1mm" ""
+        Choice "AF2/2mm" ""
+        Choice "AF3/3mm" ""
+        Choice "AF4/4mm" ""
+        Choice "AF5/5mm" ""
+        Choice "AF6/6mm" ""
+        Choice "AF7/7mm" ""
+        Choice "AF8/8mm" ""
+        Choice "AF9/9mm" ""
+        Choice "AF10/10mm" ""
+        Choice "AF11/11mm" ""
+        Choice "AF12/12mm" ""
+        Choice "AF13/13mm" ""
+        Choice "AF14/14mm" ""
+        Choice "AF15/15mm" ""
+        Choice "AF16/16mm" ""
+        Choice "AF17/17mm" ""
+        Choice "AF18/18mm" ""
+        Choice "AF19/19mm" ""
+        Choice "AF20/20mm" ""
+        Choice "AF21/21mm" ""
+        Choice "AF22/22mm" ""
+        Choice "AF23/23mm" ""
+        Choice "AF24/24mm" ""
+        Choice "AF25/25mm" ""
+        Choice "AF26/26mm" ""
+        Choice "AF27/27mm" ""
+        Choice "AF28/28mm" ""
+        Choice "AF29/29mm" ""
+        Choice "AF30/30mm" ""
+  }
+}
+

@@ -1,0 +1,66 @@
+def pollingConexion(self):
+			conexion_activa = conexion.obtenerLogs()
+			print("conexion:",conexion_activa)
+			try:
+				#conexion_activa = conexion.servidorActivo()
+				conexion_activa = conexion.obtenerLogs()
+				print("conexion:",conexion_activa)
+			except:
+				print("ocurrio un error")
+
+			QtCore.QTimer.singleShot(5000,self.pollingConexion)
+
+
+# coding=utf-8
+__author__ = "Rodrigo"
+__date__ = "$10-jun-2019 14:00:10$"
+
+from Monitor import Monitor
+import time
+from datetime import datetime
+
+
+def main ():
+    
+    
+    #Se crea el constructor e inicia el puerto de comunicaci�n
+    
+    #botones = Botones("COM7", 3, 2)
+    #botones = Botones("/dev/ttyUSB0", 3, 3)
+    #botones = Botones(3, 3, dispositivo = Botones.PUERTO_ARDUINO)
+    monitor = Monitor()
+    fecha = str(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+    nodo = 21
+    
+    #Ejemplo de Lectura
+    
+    while True:
+
+        logs = str(monitor.obtenerLogsConexion(fecha, nodo))
+        #for log in logs:
+        #    print("Nodo: "+str(log[3])+"  "+"Fecha:"+str(log[1]))
+        print(str(logs)) 
+        time.sleep (5)
+        
+    
+
+    """
+    #Ejemplo de escritura
+    
+    time.sleep(4)
+    botones.Y[0].establecerValor(1)
+    time.sleep(2)
+    botones.Y[1].establecerValor(1)
+    
+    time.sleep(2)
+    botones.Y[0].establecerValor(0)
+    time.sleep(2)
+    botones.Y[1].establecerValor(0)"""
+    
+
+    #Para cerrar el puerto de comunicaci�n
+    #botones.cerrarPuerto()
+
+
+if __name__ == "__main__":
+    main ()
