@@ -4464,6 +4464,14 @@ def count(ser, estadoConexion):
 		ser.limpiar()
 		#ser.flushInput()'''
 		
+		'''
+			Modificacion cambio_01: limpiar el puerto
+		'''
+		ser.limpiar()
+		'''
+			Modificacion cambio_01: limpiar el puerto
+		'''
+
 		MONEDAS_TMP = estatusTubos(ser)
 		guardar.print("Tubos antes del cambio: ",MONEDAS_TMP)
 		#print("Monedas previo al cambio: ",MONEDAS_TMP)
@@ -4475,6 +4483,13 @@ def count(ser, estadoConexion):
 			
 		else:
 			while(1):
+				'''
+					Modificacion cambio_01: limpiar el puerto
+				'''
+				ser.limpiar()
+				'''
+					Modificacion cambio_01: limpiar el puerto
+				'''
 				if(cambio<=20):
 					#pagado=1
 					if(cambio!=0):
@@ -4485,6 +4500,10 @@ def count(ser, estadoConexion):
 				else:
 					darCambio(ser,20)
 					cambio=cambio-20
+
+				
+
+
 			#print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOK\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
 			time.sleep(2)
 			MONEDAS_POR_HW = estatusTubos(ser)
