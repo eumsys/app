@@ -2,7 +2,7 @@
 #!/usr/bin/env python3
 
 '''
-Version: CMB-1.3.1
+Version: MB-2.1
 Fecha: 26/12/2019
 
 UPDATE:
@@ -228,6 +228,7 @@ encriptacion = 0
 guardar = GuardarLogs("Logs")
 
 sensores = viewData('sensores.ini')
+secuencia_recarga = 0
 
 FALTANTE = ["-","-","-","-","-"]
 
@@ -422,11 +423,14 @@ def interface():
 			
 			
 		def operacionRecarga(self):
-			#self.habilitarDispositivosCobro(True)
-			self.cambia(24)
+			global secuencia_recarga
+			secuencia_recarga = 1
+			self.secuenciaCobro(4)
+
 
 		def confirmarRecarga(self):
-			#self.deshabilitarDispositivosCobro()
+			global secuencia_recarga
+			secuencia_recarga = 0
 			self.cambia(0)
 
 
@@ -578,7 +582,7 @@ def interface():
 			#thread3 = Thread(target=leerCodQR, args = ())
 			aux_tarifa = 200
 			self.lscan.setText("M,60,1,21'06'2019,10Ñ30Ñ12.")
-			self.scan()
+			self.scan("M,60,1,21'06'2019,10Ñ30Ñ12.")
 
 		def validacionScan(self):
 			#thread3 = Thread(target=leerCodQR, args = ())
@@ -1765,7 +1769,7 @@ def interface():
 
 
 		def montos(self):
-			global FALTANTE,CobroFinalizado,conexion_activa,mensajeBoletoSellado,cp,registraPago,comienzaLectura,comienzaCambio,NoCajero,cajeroSuspendido,suspenderCajero,w,conteoPantallaPrincipal,inicioPago,imprime,cambiaColor,nom,loc,nivelDeCambio,cambio,leido,total,aux_cambio,aux_cambio1,pagado,config,monedas,monedasTotal,dineroTotal,avis,dineroTotalB,billetesTotales,billetes,tarifaVoluntaria,mensajeBoletoUsado,mensajeBoletoPerdido,mostrarTiempoDeSalidaRestante,mensajeError,mensajeAyuda
+			global secuencia_recarga,FALTANTE,CobroFinalizado,conexion_activa,mensajeBoletoSellado,cp,registraPago,comienzaLectura,comienzaCambio,NoCajero,cajeroSuspendido,suspenderCajero,w,conteoPantallaPrincipal,inicioPago,imprime,cambiaColor,nom,loc,nivelDeCambio,cambio,leido,total,aux_cambio,aux_cambio1,pagado,config,monedas,monedasTotal,dineroTotal,avis,dineroTotalB,billetesTotales,billetes,tarifaVoluntaria,mensajeBoletoUsado,mensajeBoletoPerdido,mostrarTiempoDeSalidaRestante,mensajeError,mensajeAyuda
 			#self.cambio.display(aux_cambio)
 			#entrada0 = pulsos.X[0].obtenerValor()
 
@@ -1800,6 +1804,15 @@ def interface():
 			#self.nomLoc_2.setText(loc)
 
 			#self.aviso.setText(str(avis))
+			if(secuencia_recarga == 1):
+				aceptarMonedas2()
+			
+			elif(secuencia_recarga == 2):
+				aceptarMonedas2()
+				secuencia_recarga = 0
+
+				
+
 			if(cambiaColor==1):
 				cambiaColor=0
 				self.gdepositar.setStyleSheet("background-color: rgb(48, 48, 48,80%);")
@@ -2953,7 +2966,33 @@ def aceptarBilletes2(estadoConexion,TON):
 					if iniciarTemporizador(TON):
 						break
 
-			
+def aceptarMonedas2():
+	global secuencia_recarga
+	a = comunicacion.crearInstruccion(Comunicacion.PROCESO, Comunicacion.MDB_DATOS, [11, 1, 11, 0])
+	ser.write(a);
+	time.sleep(.05)
+	r = ser.read(6)
+	print("mo",r)
+	if(r):
+		print("A")
+		if(r.__sizeof__() > 18):
+			print("B")
+			if (r[0] == 11):
+				a = comunicacion.crearInstruccion(Comunicacion.PROCESO, Comunicacion.MDB_DATOS, [0 , 0])
+				ser.write(a);
+			elif(r[0] != 0 and r[0] !=11 and r[0]!=2 and r.__sizeof__() > 18):
+				print("C")
+				print(r)
+				a = comunicacion.crearInstruccion(Comunicacion.PROCESO, Comunicacion.MDB_DATOS, [0 , 0])
+				ser.write(a);
+				if (rep == 0):
+					print("D")
+					palPoll(ser,r[0], r)
+					rep = 0
+					#rep=1
+			if (r[0] == 0):
+				rep = 0
+
 			
 def aceptarMonedas(estadoConexion):
 	global cp,cambio,tarifa,aux_cambio,aux,rep,ser,aux_tarifa,killbill
@@ -2991,6 +3030,10 @@ def aceptarMonedas(estadoConexion):
 def deshabilitarDispositivosCobro():
 	self.disable_coin()
 	self.disable_sequence()
+def habilitarPolleo(estadoConexion):
+	global secuencia_recarga
+	resultadoConfiguracionMonedero = enable_coin(ser)
+
 def habilitarDispositivosCobro(estadoConexion):
 	global guardar,tipo_controladora,ESTADO_BILLETERO,tarifaVoluntaria,cp,tiempoAgotadoDePago,cambiaColor,total,bill,cambio,tarifa,aux_cambio,aux,rep,estatus,ser,killbill,aux_tarifa,bill,pagado,billetesTotales,dineroTotal,billetes,dineroTotalB,billetesPago
 	

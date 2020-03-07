@@ -38,7 +38,7 @@ curl -O --progress-bar -i ${upload_url} \
   -F content-type=${content_type} \
   -F file=@${FILENAME} \
  
-echo Sending Notification ...
+echo Sending Notification ...${file_url}
 curl -u ${APIKEY}: https://api.pushbullet.com/v2/pushes -d type=file -d file_name=${FILENAME} -d file_type=${FILETYPE} -d file_url=${file_url}  -d type=note -d title=${2} -d body=${3}
 echo
  

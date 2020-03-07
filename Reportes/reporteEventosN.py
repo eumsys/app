@@ -73,10 +73,11 @@ class PDF():
 
     def generarPdf(self,idCajero,idSucursal):
         #self.pdf.output('reportes/'+self.nombre+'_'+self.fecha2[:10]+'.pdf','F')
-        nombre_archivo = "S"+str(idSucursal)+"_"+"C"+str(idCajero)+"_"+self.fecha1[10:].replace(':','.').replace(' ','')+'_'+self.fecha2[:10]+'.pdf'
+        nombre_archivo = "S"+str(idSucursal)+"_"+"C"+str(idCajero)+"_"+self.fecha1[10:].replace(':','-').replace(' ','')+'_'+self.fecha2[:10]+'.pdf'
         print("generando pdf: ",nombre_archivo)
         self.pdf.output(ruta+'reportes/'+nombre_archivo,'F')
-        os.system("./"+ruta.replace(rutaUsuario,"")+"reportes.sh "+nombre_archivo)
+        #os.system("./"+ruta.replace(rutaUsuario,"")+"reportes.sh "+nombre_archivo)
+        os.system(""+ruta+"reportes.sh "+nombre_archivo)
 
     def establecerRangoFechas(self,fecha1,fecha2):
         self.fecha1 = fecha1
@@ -374,6 +375,33 @@ def incidencias(pdf):
 
     pdf.generarPdf(obtenerIdCajero(),obtenerIdSucursal())
 
+def sumarBilletes(result):
+    cantidad_billetes = {1:0,2:0,5:0}
+    for reg in result:
+        print("reg*************",reg[0])
+        valores = reg[0].split(",")
+        for valor in valores:
+            print("**",valor)
+            billetes = valor.split(":")
+            #print(billetes)
+            try:
+                #print("####",billetes,cantidad_billetes[int(billetes[1])],cantidad_billetes.get(int(billetes[1])),billetes[0])
+                '''
+                print("####",billetes)
+                print("####",cantidad_billetes[int(billetes[1])])
+                print("####",cantidad_billetes.get(int(billetes[1])))
+                print("####",billetes[0])
+                '''
+                cantidad_billetes[int(billetes[1])] = cantidad_billetes.get(int(billetes[1])) + int(billetes[0])
+            except:
+                print("No se pudo hacer la sumatoria *******************************************************")
+                pass
+    print("Billetes: *******************************************************",cantidad_billetes)
+    return cantidad_billetes
+    
+
+
+
 def consultaBD(tipoQuery,query):
     if tipoQuery == 1:
         cursor.execute(query)
@@ -389,6 +417,13 @@ def consultaBD(tipoQuery,query):
         for reg in cursor:
             importe += str(reg[1])+"x"+str(reg[0])+" "
         return importe
+    elif tipoQuery == 4:
+        cursor.execute(query)
+        billetes = sumarBilletes(cursor)
+        return billetes
+
+
+
 
 def generarDesglose(fechaQuery1,fechaQuery2,pdf,numero):
     tablaCorteCajero = Tabla(pdf,'CC\n','')
@@ -410,10 +445,32 @@ def generarDesglose(fechaQuery1,fechaQuery2,pdf,numero):
     #queryCorteCaja = "select sum(monto) from pagos where fechaexpedicion between '{0}' and '{1}' and idcaj={2}".format(fechaQuery1,fechaQuery2,numero)
     queryDetallesCorte = "select monto,count(monto) from \"PAGOS\" where \"fechaExpedicion\" between '{0}' and '{1}' and codigo<5 group by monto".format(fechaQuery1,fechaQuery2)
 
+    '''
+    Billetes
+    '''
+
+    queryBilletes = "select billetes from \"PAGOS\" where \"fechaExpedicion\" between '{0}' and '{1}' and codigo<5 and monedas!='0:0'".format(fechaQuery1,fechaQuery2)
+    detallesBilletes = consultaBD(4,queryBilletes)
+    print("detallesBilletes",detallesBilletes,"ok")
+    billete_20 = 0
+    billete_50 = 0
+    billete_100 = 0
+
+    try:
+        billete_20 = detallesBilletes.get(1)
+        billete_50 = detallesBilletes.get(2)
+        billete_100 = detallesBilletes.get(5)
+    except:
+        print("No se pudieron obtener los valores de los billetes")
+    '''
+    Billetes
+    '''
+
 
     #cobrados = consultaBD(1,queryCobrados)
     #corteCaja = consultaBD(1,queryCorteCaja)
-    detallesCorte = consultaBD(3,queryDetallesCorte)
+    #detallesCorte = consultaBD(3,queryDetallesCorte)+detallesBilletes+detallesBilletes+detallesBilletes+detallesBilletes+detallesBilletes
+    
 
     tablaCorteCajero.agregarCeldas(str(numero),1)
     #tablaCorteCajero.agregarCeldas(str('-'),1)
@@ -422,10 +479,10 @@ def generarDesglose(fechaQuery1,fechaQuery2,pdf,numero):
     tablaCorteCajero.agregarCeldas(str('-'),1)
     tablaCorteCajero.agregarCeldas(str('-'),1)
     tablaCorteCajero.agregarCeldas(str('-'),1)
+    tablaCorteCajero.agregarCeldas(str(billete_20),1)
+    tablaCorteCajero.agregarCeldas(str(billete_50),1)
+    tablaCorteCajero.agregarCeldas(str(billete_100),1)
     tablaCorteCajero.agregarCeldas(str('-'),1)
-    tablaCorteCajero.agregarCeldas(str('-'),1)
-    tablaCorteCajero.agregarCeldas(str('-'),1)
-    tablaCorteCajero.agregarCeldas(str(detallesCorte),1)
 
     tablaCorteCajero.dibujarTabla()
 
