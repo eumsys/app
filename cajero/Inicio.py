@@ -855,7 +855,7 @@ def interface():
 				lines = (line.rstrip() for line in f)
 				print(lines)
 
-		 
+		
 
 				# busca en cada linea si existe la cadena a buscar, y si la encuentra
 
@@ -1322,7 +1322,7 @@ def interface():
 				lines = (line.rstrip() for line in f)
 				print(lines)
 
-		 
+		
 
 				# busca en cada linea si existe la cadena a buscar, y si la encuentra
 
@@ -3045,7 +3045,7 @@ def habilitarDispositivosCobro(estadoConexion):
 	TON_02 = Temporizador("Aceptar Billetes", 5)
 	guardar.print("iniciando cobro...")
 	
-    
+	
 
 
 	while(killbill == 0):
@@ -4757,7 +4757,7 @@ def registrarPagoActual(cp, NoCajero, aux_cambio, aux_tarifa, costillo, datosOpe
 		print("Error con la BD interna.")
 		guardar.print("Registro interno fallido",datosOperacionBD,str(CODIGO_ERROR))
 		
-    	
+		
 
 
 	

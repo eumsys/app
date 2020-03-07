@@ -32,4 +32,4 @@ progress_bar()
 #cd ~/Documentos/eumArd/app/Reportes/reportes
 
 python3 ~/Documentos/eumArd/app/Reportes/reporteEventosN.py
-scp -r ~/Documentos/eumArd/app/Reportes/reportes/ cajero@192.168.1.129:~/Reportes/
+#scp -r ~/Documentos/eumArd/app/Reportes/reportes/ cajero@192.168.1.129:~/Reportes/
