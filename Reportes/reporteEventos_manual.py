@@ -31,7 +31,7 @@ fecha_hoy = str(date.today())
 #fechaQuery1="2017-11-26 07:00:00"
 #fechaQuery2="2017-11-26 22:00:00"
 
-fecha_inicio = "2020-03-07 07:00:00"
+fecha_inicio = "2010-03-07 07:00:00"
 fecha_hora_actual = "2020-03-08 22:00:00"
 
 
@@ -81,7 +81,7 @@ class PDF():
         print("generando pdf: ",nombre_archivo)
         self.pdf.output(ruta+'reportes/'+nombre_archivo,'F')
         #os.system("./"+ruta.replace(rutaUsuario,"")+"reportes.sh "+nombre_archivo)
-        os.system(""+ruta+"reportes.sh "+nombre_archivo)
+        #os.system(""+ruta+"reportes.sh "+nombre_archivo)
 
     def establecerRangoFechas(self,fecha1,fecha2):
         self.fecha1 = fecha1
@@ -381,6 +381,7 @@ def incidencias(pdf):
 
 def sumarBilletes(result):
     cantidad_billetes = {1:0,2:0,5:0}
+    print("result",result)
     for reg in result:
         print("reg*************",reg[0])
         valores = reg[0].split(",")
@@ -453,7 +454,7 @@ def generarDesglose(fechaQuery1,fechaQuery2,pdf,numero):
     Billetes
     '''
 
-    queryBilletes = "select billetes from \"PAGOS\" where \"fechaExpedicion\" between '{0}' and '{1}' and codigo<5 and monedas!='0:0'".format(fechaQuery1,fechaQuery2)
+    queryBilletes = "select billetes from \"PAGOS\" where \"fechaExpedicion\" between '{0}' and '{1}' and codigo<5 and billetes!='0:0'".format(fechaQuery1,fechaQuery2)
     detallesBilletes = consultaBD(4,queryBilletes)
     print("detallesBilletes",detallesBilletes,"ok")
     billete_20 = 0

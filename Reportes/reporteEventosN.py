@@ -449,7 +449,7 @@ def generarDesglose(fechaQuery1,fechaQuery2,pdf,numero):
     Billetes
     '''
 
-    queryBilletes = "select billetes from \"PAGOS\" where \"fechaExpedicion\" between '{0}' and '{1}' and codigo<5 and monedas!='0:0'".format(fechaQuery1,fechaQuery2)
+    queryBilletes = "select billetes from \"PAGOS\" where \"fechaExpedicion\" between '{0}' and '{1}' and codigo<5 and billetes!='0:0'".format(fechaQuery1,fechaQuery2)
     detallesBilletes = consultaBD(4,queryBilletes)
     print("detallesBilletes",detallesBilletes,"ok")
     billete_20 = 0
