@@ -5,7 +5,7 @@ import time
 import fpdf 
 from fpdf import FPDF
 import os,sys,getopt
-
+import shutil
 
 connection = psycopg2.connect(user='postgres', password='Postgres3UMd6', database='CajerOk', host='localhost')
 cursor = connection.cursor()
@@ -667,7 +667,8 @@ def main (argv):
 
 
     infile = open(ruta+"fechaDeCorte.txt", 'r')
-    fecha_tmp=infile.readline()
+    fecha_tmp=infile.readline().rstrip("\n")
+    #fecha_tmp=infile.readline()
     infile.close()
     
     #fecha_actual = str(datetime.strptime(fecha_hoy.date(),"%Y-%m-%d") )
@@ -676,7 +677,10 @@ def main (argv):
     pdfIncidencias = PDF('Incidencias',fecha_tmp,fecha_hora_actual,'')
     incidencias(pdfIncidencias)
 
+
+    
     print("fechas:: ",fecha_tmp,fecha_hoy,fecha_hora_actual)
+    shutil.copy(ruta+"fechaDeCorte.txt", ruta+"fechaDeCorte_intervalo_de_inicio.txt")
     infile = open(ruta+"fechaDeCorte.txt", 'w')
     infile.write(str(fecha_hora_actual))
     infile.close()

@@ -45,7 +45,7 @@ from Monitor.Hopper import Hopper
 from PuertoSerie import PuertoSerie
 import traceback
 from Logs.GuardarLogs import GuardarLogs
-
+import shutil
 
 
 
@@ -404,10 +404,14 @@ def interface():
 			self.bvaciarsi.clicked.connect(self.vaciarCartucho)
 			self.bvaciarno.clicked.connect(lambda:self.cambia(24))
 			#####--------------Modo operacion------------
+			#Creando respaldo de archivo de confguracion
 			self.vizualizar = viewData('configuracion.ini')
 			#self.vizualizar.getInfo()
 			self.panelConfig()
 			self.datosEstacionamiento()
+			shutil.copy(ruta+"configParser/configuracion.ini", ruta+"configParser/configuracion_respaldo.ini")
+			shutil.copy(ruta+"configParser/sensores.ini", ruta+"configParser/sensores_respaldo.ini")
+
 			'''
 			#####--------------Modo operacion------------
 			self.listaDeVariables = ListaDeVariables()
