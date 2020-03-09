@@ -81,7 +81,7 @@ class PDF():
         print("generando pdf: ",nombre_archivo)
         self.pdf.output(ruta+'reportes/'+nombre_archivo,'F')
         #os.system("./"+ruta.replace(rutaUsuario,"")+"reportes.sh "+nombre_archivo)
-        #os.system(""+ruta+"reportes.sh "+nombre_archivo)
+        os.system(""+ruta+"reportes.sh "+nombre_archivo)
 
     def establecerRangoFechas(self,fecha1,fecha2):
         self.fecha1 = fecha1
