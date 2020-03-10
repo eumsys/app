@@ -680,7 +680,7 @@ def main (argv):
 
     
     print("fechas:: ",fecha_tmp,fecha_hoy,fecha_hora_actual)
-    shutil.copy(ruta+"fechaDeCorte.txt", ruta+"fechaDeCorte_intervalo_de_inicio.txt")
+    #shutil.copy(ruta+"fechaDeCorte.txt", ruta+"fechaDeCorte_intervalo_de_inicio.txt")
     infile = open(ruta+"fechaDeCorte.txt", 'w')
     infile.write(str(fecha_hora_actual))
     infile.close()

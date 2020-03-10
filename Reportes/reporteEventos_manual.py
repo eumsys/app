@@ -31,7 +31,7 @@ fecha_hoy = str(date.today())
 #fechaQuery1="2017-11-26 07:00:00"
 #fechaQuery2="2017-11-26 22:00:00"
 
-fecha_inicio = "2010-03-07 07:00:00"
+fecha_inicio = "2020-03-07 07:00:00"
 fecha_hora_actual = "2020-03-08 22:00:00"
 
 
@@ -686,7 +686,7 @@ def main (argv):
 
     
     #print("fechas:: ",fecha_inicio,fecha_hoy,fecha_hora_actual)
-    shutil.copy(ruta+"fechaDeCorte.txt", ruta+"fechaDeCorte_intervalo_de_inicio.txt")
+    #shutil.copy(ruta+"fechaDeCorte.txt", ruta+"fechaDeCorte_intervalo_de_inicio.txt")
     infile = open(ruta+"fechaDeCorte.txt", 'w')
     infile.write(str(fecha_hora_actual))
     infile.close()
