@@ -4638,7 +4638,7 @@ def count(ser, estadoConexion):
 				Secuencia cambio faltante
 				print("vairiable cambio: ",cambio)
 			'''
-			cambio_faltante = 3
+			#cambio_faltante = 3
 			if cambio_faltante > 0 :
 				guardar.print("Cambio faltante, intentando nuevamente... ")
 				cambio_faltante = reintento_cambio(ser,cambio_faltante)
