@@ -1765,8 +1765,7 @@ def interface():
 
 		def logPrender(self):
 			try:
-
-				prendido = conexion.logPrendido()
+				prendido = conexion.logPrendido(1)
 				print("Se registro log de prendido")
 			except:
 				print("Error al registrar log de prendido")
@@ -4468,9 +4467,72 @@ def estatusTubos(ser):
 
 
 
+
+def reintento_cambio(ser,cambio):
+	aux_cambio = cambio
+	print(" ################### Segundo intento dispensar cambio #####################")
+
+	'''
+		Modificacion cambio_01: limpiar el puerto
+	'''
+	ser.limpiar()
+	'''
+		Modificacion cambio_01: limpiar el puerto
+	'''
+
+	MONEDAS_TMP = estatusTubos(ser)
+	guardar.print("Tubos antes del cambio: ",MONEDAS_TMP)
+	while(1):
+		'''
+			Modificacion cambio_01: limpiar el puerto
+		'''
+		ser.limpiar()
+		'''
+			Modificacion cambio_01: limpiar el puerto
+		'''
+		if(cambio<=20):
+			#pagado=1
+			if(cambio!=0):
+				darCambio(ser,cambio)
+			killbill = 1
+			
+			break
+		else:
+			darCambio(ser,20)
+			cambio=cambio-20
+
+		
+
+
+	#print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOK\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+	time.sleep(2)
+	MONEDAS_POR_HW = estatusTubos(ser)
+	guardar.print("Tubos despues del cambio: ",MONEDAS_POR_HW)
+	#print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOK2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",cajeroSuspendido)
+
+	MONEDAS_TMP[0] = MONEDAS_TMP[0] - MONEDAS_POR_HW[0]
+	MONEDAS_TMP[1] = MONEDAS_TMP[1] - MONEDAS_POR_HW[1]
+	MONEDAS_TMP[2] = MONEDAS_TMP[2] - MONEDAS_POR_HW[2]
+	MONEDAS_TMP[3] = MONEDAS_TMP[3] - MONEDAS_POR_HW[3]
+	
+	#print("Monedas dispensadas como cambio: ",MONEDAS_TMP)
+	monedasCambio = MONEDAS_TMP
+	
+	MONEDAS_POR_SW[0] = MONEDAS_POR_SW[0] - MONEDAS_TMP[0]
+	MONEDAS_POR_SW[1] = MONEDAS_POR_SW[1] - MONEDAS_TMP[1]
+	MONEDAS_POR_SW[2] = MONEDAS_POR_SW[2] - MONEDAS_TMP[2]
+	MONEDAS_POR_SW[3] = MONEDAS_POR_SW[3] - MONEDAS_TMP[3]
+	
+	cambio_faltante = compararCambio(monedasCambio,aux_cambio)
+	return cambio_faltante
+
+
+
+
 def count(ser, estadoConexion):
 	global guardar,FALTANTE,cambio_faltante,CobroFinalizado,MONEDAS_POR_SW,MONEDAS_POR_HW,registraPago,comienzaCobro,comienzaCambio,Sinpago,DA,costillo,cajeroSuspendido,cs2,suspenderCajero,cp,total,bill,cambio,tarifa,aux_cambio,killbill,pagado,monedas,monedasTotal,dineroTotal,nivelDeCambio,imprime,monedasPago,billetesPago,NoCajero,tarifasAplicadas,fechaAMD,fo,pe,h,monedasCambio
 	i=-1
+	intentos = 0
 	#DA=DA+costillo
 	descripcionMonedas=""
 	descripcionBilletes=""
@@ -4529,6 +4591,7 @@ def count(ser, estadoConexion):
 			
 			
 		else:
+			intentos = intentos + 1
 			while(1):
 				'''
 					Modificacion cambio_01: limpiar el puerto
@@ -4570,8 +4633,22 @@ def count(ser, estadoConexion):
 			MONEDAS_POR_SW[2] = MONEDAS_POR_SW[2] - MONEDAS_TMP[2]
 			MONEDAS_POR_SW[3] = MONEDAS_POR_SW[3] - MONEDAS_TMP[3]
 			
-			
-			
+			cambio_faltante = compararCambio(monedasCambio,aux_cambio)
+			'''
+				Secuencia cambio faltante
+				print("vairiable cambio: ",cambio)
+			'''
+			cambio_faltante = 3
+			if cambio_faltante > 0 :
+				guardar.print("Cambio faltante, intentando nuevamente... ")
+				cambio_faltante = reintento_cambio(ser,cambio_faltante)
+				intentos = intentos + 1
+				
+
+			'''
+				Secuencia cambio faltante
+				print("vairiable cambio: ",cambio)
+			'''
 			
 			
 		if(cp==1):
@@ -4606,7 +4683,7 @@ def count(ser, estadoConexion):
 		descripcionMonedas = obtenerDescripcion(monedasPago)
 		descripcionBilletes = obtenerDescripcion(billetesPago)
 		descripcionMonedasCambio = obtenerDescripcion(monedasCambio)
-		cambio_faltante = compararCambio(monedasCambio,aux_cambio)
+		#cambio_faltante = compararCambio(monedasCambio,aux_cambio)
 		print("Datos Operacion: ",datosOperacion)
 		print("Monto cobrado: ",aux_tarifa)
 		print("Monedas recibidas: ",descripcionMonedas)
@@ -4614,6 +4691,8 @@ def count(ser, estadoConexion):
 		print("Cambio solicitado: ",aux_cambio)
 		print("Cambio entregado (Monedas): ",descripcionMonedasCambio)
 		print("Cambio entregado (Billetes): ","0:0")
+		print("Intentos realizados: ",intentos) 
+
 
 		guardar.print("Datos Operacion: ",datosOperacion)
 		guardar.print("Monto cobrado: ",aux_tarifa)
@@ -4622,11 +4701,11 @@ def count(ser, estadoConexion):
 		guardar.print("Cambio solicitado: ",aux_cambio)
 		guardar.print("Cambio entregado (Monedas): ",descripcionMonedasCambio)
 		guardar.print("Cambio entregado (Billetes): ","0:0")
+		guardar.print("Intentos realizados: ",intentos)
 
 		#cambio_faltante = 3
 		if(cambio_faltante):
 			print("Cambio incompleto, falto: ",cambio_faltante)
-			print("Intentando dispensar faltante: ","0:0")
 			guardar.print("Cambio incompleto, falto:",str(cambio_faltante))
 			guardar.print("Monto cobrado: ",aux_tarifa)
 
@@ -4772,7 +4851,7 @@ def compararCambio(cambioEntregado,cambioSolicitado):
 	'''
 		Se compara el cambio
 	'''
-	global sensores
+	global sensores,guardar
 	valorCambio=0
 	i=-1
 	if(cambioEntregado[0]==0 and cambioEntregado[1]==0 and cambioEntregado[2]==0 and cambioEntregado[3]==0):
@@ -4789,6 +4868,7 @@ def compararCambio(cambioEntregado,cambioSolicitado):
 				sensores.editValue('MONEDERO',moneda,str(cantidad-item))
 				
 	print("comparativa cambio solicitado/entregado: ", cambioSolicitado,valorCambio)
+	guardar.print("comparativa cambio solicitado/entregado: ", cambioSolicitado,valorCambio)
 	return cambioSolicitado - valorCambio
 	
 def obtenerDescripcion(lista):
